@@ -1,28 +1,28 @@
-# Perseus
+## Perseus
 ***
 
-# Project Overview
+### Project Overview
 ***
 Perseus software digital internet intelligent storage unit
 
-# Configuration Instruction
+### Configuration Instruction
 ***
 
-# Operating Instructions
+### Operating Instructions
 ***
 
-# File list or structure
+### File list or structure
 ***
 
 
-# Copyright and licensing information
+### Copyright and licensing information
 ***
 
-# Known Bugs
+### Known Bugs
 ***
 
-# Troubleshooting
+### Troubleshooting
 ***
 
-# Credits and Acknowledgements
+### Credits and Acknowledgements
 ***
