@@ -3,13 +3,19 @@
 
 ### Project Overview
 ***
-Perseus software digital internet intelligent storage unit
+Intelligent Software digital internet storage unit
+1. Documentation
+2. Official Website
+3. Blog
 
 ### Configuration Instruction
 ***
 
 ### Operating Instructions
 ***
+* Linux Instructions
+* Windows Instructions
+* Android Instructions
 
 ### File list or structure
 ***
@@ -26,3 +32,4 @@ Perseus software digital internet intelligent storage unit
 
 ### Credits and Acknowledgements
 ***
+Made by Reuben kelechi Ukah
