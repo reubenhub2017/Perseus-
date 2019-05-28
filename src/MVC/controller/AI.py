@@ -5,4 +5,3 @@ class AI:
     """ Need more information on the AI"""
     def NeedMoreInfo(self):
         pass
- 
