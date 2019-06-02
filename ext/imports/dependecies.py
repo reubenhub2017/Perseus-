@@ -3,5 +3,7 @@ import sys
 sys.path.insert(0, './src/MVC/controller/')
 sys.path.insert(0,'./src/MVC/view/')
 sys.path.insert(0,'./src/MVC/model/')
-import Tkinter as tk
-import turtle
+import Tkinter
+import ttk
+from Tkinter import *
+from ttk import *

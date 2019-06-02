@@ -8,7 +8,7 @@ import turtle
 global root
 
 def start():
-    root = tk.Tk()
+    root = Tk()
     test = Controller(root)
     test.run()
     test.analytics()

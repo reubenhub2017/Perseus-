@@ -17,6 +17,7 @@ class Shapes:
         global root
         can = Canvas(root, width=250, height=250)
         can.pack()
+
         can.create_line(100,100,100,100)
     def curve_lines(self):
         pass
