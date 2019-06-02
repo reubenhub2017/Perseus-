@@ -28,27 +28,41 @@ class Controller:
 
     def runvisuals(self):
         self.root.title("Perseus")
+        # get screen width and height
+        ws = self.root.winfo_screenwidth() # width of the screen
+        hs = self.root.winfo_screenheight() # height of the screen
+
+        w = 2048
+        h = 720
+
+        # calculate x and y coordinates for the Tk root window
+        x = (ws/2) - (w/2)
+        y = (hs/2) - (h/2)
+
+        # set the dimensions of the screen
+        # and where it is placed
+        self.root.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.root.geometry('2048x720')
 
-        testCanvas = Frame(self.root, bg="grey", height=720, width=2048, bd=4, relief=SUNKEN)
-        testCanvas.grid(row=1, column=2)
-        testCanvas.pack()
-        frame = Frame(self.root, bg='black',height=720, width=2048, bd=2, relief=SUNKEN)
-        frame.grid(row=0,column=0)
+        sideFrame = Frame(self.root, bg="grey", height=720,width=400, bd=4, relief=SUNKEN)
+        sideFrame.pack(side=LEFT)
 
-        nb = ttk.Notebook(testCanvas)
-        nb.grid(row=0, column=2,columnspan=40,rowspan=39,sticky='NESW')
+        frame = Frame(self.root, bg='black', bd=2, height=720,width=1648, relief=SUNKEN)
+        frame.pack(side=RIGHT)
 
-        page1 = ttk.Frame(nb)
-        page2 = ttk.Frame(nb)
 
-        nb.add(page1, text="Tab1 ")
-        nb.add(page2, text="Tab2 ")
 
-        nb.pack(expand=1, fill="both")
 
-        #TestShape = Shapes(frame)
-        #TestShape.circle()
+
+
+        p = ttk.Panedwindow(sideFrame, orient=VERTICAL)
+        # first pane, which would get widgets gridded into it:
+        f1 = ttk.Labelframe(p, text='File Management', width=400, height=720)
+        p.add(f1)
+        p.pack(fill=BOTH, expand=1)
+
+        TestShape = Shapes(frame)
+        TestShape.circle()
 
 
         """ Making the menu bar for the application"""
@@ -102,4 +116,5 @@ class Controller:
         # display the menu
         self.root.config(menu=menubar)
         frame.pack()
+
         #testCanvas.pack()
