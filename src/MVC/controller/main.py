@@ -44,25 +44,41 @@ class Controller:
         self.root.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.root.geometry('2048x720')
 
-        sideFrame = Frame(self.root, bg="grey", height=720,width=400, bd=4, relief=SUNKEN)
+        sideFrame = Frame(self.root, bg="grey", height=720,width=200, bd=4, relief=SUNKEN)
         sideFrame.pack(side=LEFT)
 
         frame = Frame(self.root, bg='black', bd=2, height=720,width=1648, relief=SUNKEN)
         frame.pack(side=RIGHT)
 
 
-
-
-
-
         p = ttk.Panedwindow(sideFrame, orient=VERTICAL)
         # first pane, which would get widgets gridded into it:
-        f1 = ttk.Labelframe(p, text='File Management', width=400, height=720)
+        f1 = ttk.Labelframe(p, text='File Management', width=200, height=720)
         p.add(f1)
         p.pack(fill=BOTH, expand=1)
 
-        TestShape = Shapes(frame)
-        TestShape.circle()
+        #Tab view
+        n = ttk.Notebook(f1)
+        f1 = ttk.Frame(n, width=200, height=720)   # first page, which would get widgets gridded into it
+        f2 = ttk.Frame(n, width=200, height=720)   # second page
+        n.add(f1, text='Local Files')
+        n.add(f2, text='Online Files')
+        n.pack(fill=BOTH, expand=1)
+
+        #Toolbar view
+        toolbar = Frame(frame, bg='grey', bd=3, height=720, width=25, relief=SUNKEN)
+        #canvasToolbar = Canvas(toolbar, bg='blue',height=720, width=20)
+        #toolbar.pack(side=RIGHT, fill=BOTH, expand=1)
+        toolbar.place(relx=1,rely=0,anchor=NE)
+
+        #buttons on the toolbar
+        for i in range(15):
+            button = Button(toolbar, height=0.5)
+            button.pack(side=TOP, fill=BOTH, expand=1)
+
+        #TestShape = Shapes(frame)
+        #TestShape.circle()
+
 
 
         """ Making the menu bar for the application"""
@@ -116,5 +132,6 @@ class Controller:
         # display the menu
         self.root.config(menu=menubar)
         frame.pack()
+
 
         #testCanvas.pack()

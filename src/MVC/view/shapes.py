@@ -9,9 +9,10 @@ class Shapes:
         self.frame = frame
 
     def circle(self):
-        can = Canvas(self.frame, width=1024, height=620, bg="black")
+        can = Canvas(self.frame, width=1648, height=720, bg="black")
+        #can.place(relx=0,rely=1,anchor=NE)
         can.pack()
-        can.create_oval(15,15,50,50, fill='blue')
+        can.create_oval(10,10,50,50, fill='blue')
 
     def lines(self):
         global root
