@@ -22,9 +22,3 @@ class Shapes:
         can.create_line(100,100,100,100)
     def curve_lines(self):
         pass
-    def node(self):
-        newNode = Node()
-        return newNode
-    def edge(self):
-        edge = self.line()
-        return edge

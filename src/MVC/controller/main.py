@@ -27,7 +27,7 @@ class Controller:
         pass
 
     def runvisuals(self):
-        self.root.title("Perseus")
+        self.root.title("Perseus 1.0.0")
         # get screen width and height
         ws = self.root.winfo_screenwidth() # width of the screen
         hs = self.root.winfo_screenheight() # height of the screen
@@ -73,8 +73,17 @@ class Controller:
 
         #buttons on the toolbar
         for i in range(15):
-            button = Button(toolbar, height=0.5)
+            button = Button(toolbar, height=1)
             button.pack(side=TOP, fill=BOTH, expand=1)
+
+
+        """Making the file tree """
+        localFileTree = Treeview(f1)
+
+
+        """Making the compression Rate Label """
+        compressionRateLabel = Label(frame, text="Compression Rate : ",   height=1, width=1648, bd=1, bg="grey")
+        compressionRateLabel.place(relx=0, rely= 1, anchor=S)
 
         #TestShape = Shapes(frame)
         #TestShape.circle()
