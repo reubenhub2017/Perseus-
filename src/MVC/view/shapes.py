@@ -5,6 +5,7 @@ from Tkinter import *
 
 global root
 class Shapes:
+    """Modify code to specify the dimension and position """
     def __init__(self,frame):
         self.frame = frame
 
@@ -13,7 +14,7 @@ class Shapes:
         #can.place(relx=0,rely=1,anchor=NE)
         can.pack()
         can.create_oval(10,10,50,50, fill='blue')
-
+    """Each line should be at least 5 units long """
     def lines(self):
         global root
         can = Canvas(root, width=250, height=250)

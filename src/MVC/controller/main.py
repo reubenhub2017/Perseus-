@@ -2,6 +2,8 @@ import sys
 sys.path.insert(0,'./ext/imports/')
 from dependecies import *
 from shapes import *
+import time
+
 
 class Controller:
     def __init__(self,root):
@@ -89,7 +91,6 @@ class Controller:
         #TestShape.circle()
 
 
-
         """ Making the menu bar for the application"""
         menubar = Menu(self.root)
 
@@ -142,5 +143,52 @@ class Controller:
         self.root.config(menu=menubar)
         frame.pack()
 
+    """Make a new window for specific functions """
 
-        #testCanvas.pack()
+    def newWindow(self, height, width, positionx, positiony, t):
+        screen = Tk()
+        screen.title = t
+        screen.geometry('%dx%d+%d+%d' % (width, height, positionx, positiony))
+        return screen
+
+    def SplashScreen(self):
+        root = Tk()
+        image = Image.open("load.jpg")
+        imageSplash = ImageTk.PhotoImage(image)
+        Label(root, image=imageSplash).pack()
+        root.overrideredirect(True)
+        progressbar = Progressbar(orient=HORIZONTAL, length=10000, mode='determinate')
+        progressbar.pack(side='bottom')
+        progressbar.start()
+        root.after(6010,root.destroy)
+        root.mainloop()
+
+
+    def messageBox(self):
+        root = Tk()
+        #root.wm_attributes('-fullscreen','true')
+        root.attributes('-alpha', 1)
+        new_top = Toplevel(root,width=150)
+        new_top.overrideredirect(True)
+        root.geometry('200x200')
+        #root.focus_force()
+
+        root.title("Say Hello")
+        label = Label(root, text="Hello World")
+        label.pack(side="top", fill="both", expand=True, padx=20, pady=20)
+        button = Button(root, text="OK", command=lambda: root.destroy())
+        button.pack(side="bottom", fill="none", expand=True)
+        root.mainloop()
+
+    def loadingScreen(self):
+        screen = self.newWindow(100,100,0,0,"Loading screen")
+        self.progress_bar = Progressbar(screen, orient= 'horizontal', length=300,mode="determinate")
+        self.progress_bar.config(mode='determinate',maximum=100, value=5)
+        self.progress_bar.pack()
+        self.progress_bar["maximum"] = 100
+        for i in range(101):
+            time.sleep(0.05)
+            self.progress_bar["value"] = i
+            self.progress_bar.update()
+            self.progress_bar["value"] = 0
+        self.progress_bar.start()
