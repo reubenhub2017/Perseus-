@@ -4,14 +4,19 @@ from dependecies import *
 from shapes import *
 import time
 from tkinter import *
-from PIL import Image, ImageTk
+from tkinter.ttk import *
+from PIL import ImageTk
+from PIL import Image
+import os
 
 
 
-class Controller:
-    def __init__(self,root):
+class Controller(Frame):
+    root = Tk()
 
-        self.root = root
+    def __init__(self, *args, **kwargs):
+        Frame.__init__(self, *args, **kwargs)
+
 
 
     def run(self):
@@ -34,10 +39,12 @@ class Controller:
         pass
 
     def runvisuals(self):
-        self.root.title("Perseus 1.0.0")
+        newroot = Tk()
+
+        newroot.title = "Perseus 1.0.0"
         # get screen width and height
-        ws = self.root.winfo_screenwidth() # width of the screen
-        hs = self.root.winfo_screenheight() # height of the screen
+        ws = newroot.winfo_screenwidth() # width of the screen
+        hs = newroot.winfo_screenheight() # height of the screen
 
         w = 2048
         h = 720
@@ -48,13 +55,16 @@ class Controller:
 
         # set the dimensions of the screen
         # and where it is placed
-        self.root.geometry('%dx%d+%d+%d' % (w, h, x, y))
-        self.root.geometry('2048x720')
+        newroot.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        newroot.geometry('2048x720')
 
-        sideFrame = Frame(self.root, bg="grey", height=720,width=200, bd=4, relief=SUNKEN)
+        gui_style = ttk.Style()
+        gui_style.configure('My.TFrame', background='grey', )
+
+        sideFrame = Frame(newroot, style='My.TFrame',height=720,width=200, bd=4, relief=SUNKEN)
         sideFrame.pack(side=LEFT)
 
-        frame = Frame(self.root, bg='black', bd=2, height=720,width=1648, relief=SUNKEN)
+        frame = Frame(newroot, style='My.TFrame' , bd=2, height=720,width=1648, relief=SUNKEN)
         frame.pack(side=RIGHT)
 
 
@@ -97,7 +107,7 @@ class Controller:
 
 
         """ Making the menu bar for the application"""
-        menubar = Menu(self.root)
+        menubar = Menu(newroot)
 
         # create a pulldown menu, and add it to the menu bar
         filemenu = Menu(menubar, tearoff=0)
@@ -145,7 +155,7 @@ class Controller:
         menubar.add_cascade(label="Help", menu=helpmenu)
 
         # display the menu
-        self.root.config(menu=menubar)
+        newroot.config(menu=menubar)
         frame.pack()
 
     """Make a new window for specific functions """
@@ -157,29 +167,26 @@ class Controller:
         return screen
 
     def SplashScreen(self):
-        root = Tk()
+        self.root.title("hi")
+        new_top = Toplevel(self,width=150)
+        new_top.overrideredirect(True)
+        self.root.geometry('200x200')
+
+        frame=Frame(self, width=100, height =50).place(x=700,y=0)
+
 
         #Making the Window
-        screenheight = (root.winfo_screenwidth() - 720)//2
-        screenwidth = (root.winfo_screenheight() - 720)//2
-
+        screenheight = (self.root.winfo_screenwidth() - 720)//2
+        screenwidth = (self.root.winfo_screenheight() - 720)//2
         path = Image.open("load.png")
 
         #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
-        photo= ImageTk.PhotoImage(path)
-
+        photo = ImageTk.PhotoImage(master=self.root, image = path, size=str(screenheight) + 'x' + str(screenwidth), )
         #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
-        panel = Label(root, image=photo)
-        panel.image = photo
-        panel.pack()
+        #Error occurred when trying place the label in master
+        panel = Label(self.root, image=photo).pack()
 
-
-        root.overrideredirect(True)
-        progressbar = Progressbar(orient=HORIZONTAL, length=10000, mode='determinate')
-        progressbar.pack(side='bottom')
-        progressbar.start()
-        root.after(6010,root.destroy)
-        root.mainloop()
+        self.root.mainloop()
     "Having problems with PIL"
 
     def messageBox(self):

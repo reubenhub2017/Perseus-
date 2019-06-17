@@ -5,7 +5,6 @@ from dependecies import *
 from main import Controller
 from shapes import Shapes
 import turtle
-
 global root
 
 
@@ -17,10 +16,10 @@ def start():
     test.run()
     test.analytics()
     test.updateUsers()
-    test.SplashScreen()
+    #test.SplashScreen()
     test.runvisuals()
     #test.newWindow(100,100,10,10,"test", add(2,4))
-    test.messageBox()\
+    test.messageBox()
 
     test.loadingScreen()
 
