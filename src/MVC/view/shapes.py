@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0,'./ext/imports/')
 from dependecies import *
-from Tkinter import *
+from tkinter import *
 
 global root
 class Shapes:

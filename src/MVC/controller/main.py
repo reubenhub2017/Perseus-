@@ -3,11 +3,16 @@ sys.path.insert(0,'./ext/imports/')
 from dependecies import *
 from shapes import *
 import time
+from tkinter import *
+from PIL import Image, ImageTk
+
 
 
 class Controller:
     def __init__(self,root):
+
         self.root = root
+
 
     def run(self):
         print("Starting program now ")
@@ -153,16 +158,29 @@ class Controller:
 
     def SplashScreen(self):
         root = Tk()
-        image = Image.open("load.jpg")
-        imageSplash = ImageTk.PhotoImage(image)
-        Label(root, image=imageSplash).pack()
+
+        #Making the Window
+        screenheight = (root.winfo_screenwidth() - 720)//2
+        screenwidth = (root.winfo_screenheight() - 720)//2
+
+        path = Image.open("load.png")
+
+        #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
+        photo= ImageTk.PhotoImage(path)
+
+        #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
+        panel = Label(root, image=photo)
+        panel.image = photo
+        panel.pack()
+
+
         root.overrideredirect(True)
         progressbar = Progressbar(orient=HORIZONTAL, length=10000, mode='determinate')
         progressbar.pack(side='bottom')
         progressbar.start()
         root.after(6010,root.destroy)
         root.mainloop()
-
+    "Having problems with PIL"
 
     def messageBox(self):
         root = Tk()

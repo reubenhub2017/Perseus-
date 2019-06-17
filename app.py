@@ -20,7 +20,7 @@ def start():
     test.SplashScreen()
     test.runvisuals()
     #test.newWindow(100,100,10,10,"test", add(2,4))
-    test.messageBox()
+    test.messageBox()\
 
     test.loadingScreen()
 
