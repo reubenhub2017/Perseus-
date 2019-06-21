@@ -12,8 +12,6 @@ import os
 
 
 class Controller(Frame):
-    root = Tk()
-
     def __init__(self, *args, **kwargs):
         Frame.__init__(self, *args, **kwargs)
 
@@ -23,6 +21,7 @@ class Controller(Frame):
         print("Starting program now ")
         print("Installing on the drive...")
         print("Running...")
+
 
     def analytics(self):
         print("Updating analytics")
@@ -61,10 +60,10 @@ class Controller(Frame):
         gui_style = ttk.Style()
         gui_style.configure('My.TFrame', background='grey', )
 
-        sideFrame = Frame(newroot, style='My.TFrame',height=720,width=200, bd=4, relief=SUNKEN)
+        sideFrame = Frame(newroot, style='My.TFrame',height=720,width=200, relief=SUNKEN)
         sideFrame.pack(side=LEFT)
 
-        frame = Frame(newroot, style='My.TFrame' , bd=2, height=720,width=1648, relief=SUNKEN)
+        frame = Frame(newroot, style='My.TFrame' , height=720,width=1648, relief=SUNKEN)
         frame.pack(side=RIGHT)
 
 
@@ -83,15 +82,16 @@ class Controller(Frame):
         n.pack(fill=BOTH, expand=1)
 
         #Toolbar view
-        toolbar = Frame(frame, bg='grey', bd=3, height=720, width=25, relief=SUNKEN)
+        toolbar = Frame(frame, style='My.TFrame', height=720, width=25, relief=SUNKEN)
         #canvasToolbar = Canvas(toolbar, bg='blue',height=720, width=20)
         #toolbar.pack(side=RIGHT, fill=BOTH, expand=1)
         toolbar.place(relx=1,rely=0,anchor=NE)
 
         #buttons on the toolbar
-        for i in range(15):
+        """for i in range(15):
             button = Button(toolbar, height=1)
             button.pack(side=TOP, fill=BOTH, expand=1)
+        """
 
 
         """Making the file tree """
@@ -99,8 +99,8 @@ class Controller(Frame):
 
 
         """Making the compression Rate Label """
-        compressionRateLabel = Label(frame, text="Compression Rate : ",   height=1, width=1648, bd=1, bg="grey")
-        compressionRateLabel.place(relx=0, rely= 1, anchor=S)
+        #compressionRateLabel = Label(frame, text="Compression Rate : ",   height=1, width=1648, bd=1, bg="grey")
+        #compressionRateLabel.place(relx=0, rely= 1, anchor=S)
 
         #TestShape = Shapes(frame)
         #TestShape.circle()
@@ -160,33 +160,15 @@ class Controller(Frame):
 
     """Make a new window for specific functions """
 
-    def newWindow(self, height, width, positionx, positiony, t):
+    def newWindow(self, height, width, positionx, positiony, title,  f = lambda t :t() ):
         screen = Tk()
-        screen.title = t
+        screen.title = title
         screen.geometry('%dx%d+%d+%d' % (width, height, positionx, positiony))
-        return screen
-
-    def SplashScreen(self):
-        self.root.title("hi")
-        new_top = Toplevel(self,width=150)
-        new_top.overrideredirect(True)
-        self.root.geometry('200x200')
-
-        frame=Frame(self, width=100, height =50).place(x=700,y=0)
+        f(screen)
 
 
-        #Making the Window
-        screenheight = (self.root.winfo_screenwidth() - 720)//2
-        screenwidth = (self.root.winfo_screenheight() - 720)//2
-        path = Image.open("load.png")
 
-        #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
-        photo = ImageTk.PhotoImage(master=self.root, image = path, size=str(screenheight) + 'x' + str(screenwidth), )
-        #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
-        #Error occurred when trying place the label in master
-        panel = Label(self.root, image=photo).pack()
 
-        self.root.mainloop()
     "Having problems with PIL"
 
     def messageBox(self):
@@ -204,16 +186,3 @@ class Controller(Frame):
         button = Button(root, text="OK", command=lambda: root.destroy())
         button.pack(side="bottom", fill="none", expand=True)
         root.mainloop()
-
-    def loadingScreen(self):
-        screen = self.newWindow(100,100,0,0,"Loading screen")
-        self.progress_bar = Progressbar(screen, orient= 'horizontal', length=300,mode="determinate")
-        self.progress_bar.config(mode='determinate',maximum=100, value=5)
-        self.progress_bar.pack()
-        self.progress_bar["maximum"] = 100
-        for i in range(101):
-            time.sleep(0.05)
-            self.progress_bar["value"] = i
-            self.progress_bar.update()
-            self.progress_bar["value"] = 0
-        self.progress_bar.start()

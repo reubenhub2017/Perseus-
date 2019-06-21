@@ -9,16 +9,30 @@ class Shapes:
     def __init__(self,frame):
         self.frame = frame
 
-    def circle(self):
-        can = Canvas(self.frame, width=1648, height=720, bg="black")
-        #can.place(relx=0,rely=1,anchor=NE)
+
+    def circle(self, width, height, x, y,
+               bg, circlewidth,
+               circleheight, circlebg):
+        can = Canvas(self.frame, width=width, height=height, bg=bg)
+        can.place(relx=0,rely=1,anchor=NE)
         can.pack()
-        can.create_oval(10,10,50,50, fill='blue')
+        can.create_oval(circlewidth,circleheight,x,y, fill=circlebg)
+        self.frame.resizable(0,0)
+        self.frame.mainloop()
+
+
+
     """Each line should be at least 5 units long """
-    def lines(self):
-        global root
-        can = Canvas(root, width=250, height=250)
+
+    def line(self, width, height, x, y,
+               bg, circlewidth,
+               circleheight, circlebg):
+        can = Canvas(self.frame, width=width, height=height, bg=bg)
+        can.place(relx=0,rely=1,anchor=NE)
         can.pack()
+        can.create_line(circlewidth,circleheight,x,y, fill=circlebg)
+        self.frame.resizable(0,0)
+        self.frame.mainloop()
 
         can.create_line(100,100,100,100)
     def curve_lines(self):
