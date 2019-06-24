@@ -37,6 +37,10 @@ class Controller(Frame):
     def hello(self):
         pass
 
+    "Zooming options for the window "
+    def ZoomFunction(self, Frame):
+        pass
+
     def runvisuals(self):
         newroot = Tk()
 
@@ -92,6 +96,8 @@ class Controller(Frame):
             button = Button(toolbar, height=1)
             button.pack(side=TOP, fill=BOTH, expand=1)
         """
+
+
 
 
         """Making the file tree """
@@ -167,9 +173,6 @@ class Controller(Frame):
         f(screen)
 
 
-
-
-    "Having problems with PIL"
 
     def messageBox(self):
         root = Tk()

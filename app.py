@@ -28,13 +28,6 @@ def SplashScreen():
     #root.overrideredirect(True)
     progress_bar.start()
     root.mainloop()
-"""Creates a new Node profile for user """
-def Node(frame):
-    node = Shapes(frame)
-    node.circle(100,100,10,10,"black", 100,100, "Tan")
-def Edge(frame):
-    node = Shapes(frame)
-    node.line(100,100,10,10,"black", 100,100, "Tan")
 
 
 
@@ -45,8 +38,8 @@ def start():
     #test.analytics()
     #test.updateUsers()
     #test.runvisuals()
-    test.newWindow(100,100,10,10,"test",Node(root))
-    test.test.newWindow(100,100,10,10,"test",Edge(root))
+    #test.newWindow(100,100,10,10,"test",Node(root))
+    test.newWindow(100,100,10,10,"test",Edge(root))
 
     #test.messageBox()
 if __name__ == '__main__':

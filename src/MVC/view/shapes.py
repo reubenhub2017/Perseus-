@@ -24,16 +24,15 @@ class Shapes:
 
     """Each line should be at least 5 units long """
 
-    def line(self, width, height, x, y,
-               bg, circlewidth,
-               circleheight, circlebg):
-        can = Canvas(self.frame, width=width, height=height, bg=bg)
-        can.place(relx=0,rely=1,anchor=NE)
+    def line(self, x1, y1, x2, y2,
+               bg, linebg):
+        can = Canvas(self.frame, width=200, height=200, bg=bg)
+        #can.place(relx=0,rely=1,anchor=NE)
         can.pack()
-        can.create_line(circlewidth,circleheight,x,y, fill=circlebg)
-        self.frame.resizable(0,0)
+        can.create_line(x1,y1,x2,y2, fill=linebg)
+        #self.frame.resizable(0,0)
         self.frame.mainloop()
 
-        can.create_line(100,100,100,100)
+        #can.create_line(0,0,100,100)
     def curve_lines(self):
         pass
