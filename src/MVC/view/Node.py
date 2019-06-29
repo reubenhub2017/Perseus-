@@ -8,9 +8,9 @@ class Node(Shapes):
         self.window = node
     """Calls function that makes the new """
 
-    def Node(self, frame, width, height, x,y, NodeColor, BgNodeCanvas):
-        node = Shapes(frame)
-        node.circle(width,height,x,y,BgNodeCanvas,NodeColor)
+    def node(self, width, height, x,y, NodeColor, BgNodeCanvas):
+        node = Shapes(self.window)
+        node.circle(width,height,x,y,BgNodeCanvas,250,250,NodeColor)
 
     def Edge(self, frame, x1,y1,x2,y2, EdgeColor, BgEdgeColor):
         node = Shapes(frame)
@@ -76,7 +76,7 @@ class TestNode:
             child.rightChild = self.rightChild
             self.rightChild = child
 
-    
+
 
 root = TestNode()
 root.val = "a"

@@ -3,7 +3,7 @@ sys.path.insert(0,'./ext/imports/')
 from dependecies import *
 from shapes import *
 import time
-from winfuncs import *
+from windowfuncs import *
 from tkinter import *
 from tkinter.ttk import *
 from PIL import ImageTk
@@ -167,7 +167,8 @@ class Controller(Frame):
         screen.title = title
         screen.geometry('%dx%d+%d+%d' % (width, height, positionx, positiony))
         f(screen)
-    
+
+
 
     def messageBox(self):
         root = Tk()

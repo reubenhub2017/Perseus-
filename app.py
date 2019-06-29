@@ -6,6 +6,8 @@ from PIL import ImageTk
 from PIL import Image
 from main import Controller
 from shapes import Shapes
+from Node import Node
+from customization import Template
 #import turtle
 import os
 import time
@@ -38,9 +40,10 @@ def start():
     #test.analytics()
     #test.updateUsers()
     #test.runvisuals()
-    #test.newWindow(100,100,10,10,"test",Node(root))
+    newNode = Node(root)
+    test.newWindow(250,250,10,10,"test",newNode.node(250,250,0,0,"blue","black"))
     test.newWindow(100,100,10,10,"test",Edge(root))
-
+    test.newWindow()
     #test.messageBox()
 if __name__ == '__main__':
     #SplashScreen()
