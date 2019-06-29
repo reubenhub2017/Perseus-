@@ -16,47 +16,68 @@ class Node(Shapes):
         node = Shapes(frame)
         node.line(x1,y1,x2,y2,EdgeColor,BgEdgeColor)
 
+    """
+
     def childObject(self,frame):
-        parent = self.parent()
-        RightChild = self.Edge(self.frame,  )
-        LeftChild = Shapes(frame)
+            Figure out the position of the parent node, rightChild, leftChild"
+            Circle parameters is as follows
+                 width, height, x, y,
+                           bg, circlewidth,
+                           circleheight, circlebg
 
-        parent.circle()
 
+        line parameters is as follows
+                x1, y1, x2, y2,
+                           bg, circlewidth,
+                           circleheight, circlebg
+
+
+
+        #parent = self.parent()
+        #RightChildren = self.Edge(self.frame, parentNode)
+        #LeftChildren = Shapes(self.frame, parentNode)
 
 
     def parentObject(self, Node, Edge):
-        pass
+        leftChildren = None
+        RightChildren = None
+        CurrentNode = None
+        Node = None
+        #Insert the new Node if it's empty
+        while True:
+            if Node == None:
+                Node.append("root")
+                CurrentNode = Node
+            else:
+                Node.leftChild = self.leftChild
+                self.leftChild = node
 
-    def childObject(self, Node, Edge):
-        "Figure out the position of the parent node, rightChild, leftChild"
-        """Circle parameters is as follows
-             width, height, x, y,
-                       bg, circlewidth,
-                       circleheight, circlebg
-
-         """
-         """ line parameters is as follows
-            x1, y1, x2, y2,
-                       bg, circlewidth,
-                       circleheight, circlebg
-
-         """
-        parent = self.circle()
-        RightChild = self.line(frame, )
-        LeftChild = self.line(frame, )
+            """
 
 
 
+class TestNode:
+    def __init__(self, Node=None, leftChild=None, rightChild=None):
+        self.val = Node
+        self.leftChild = leftChild
+        self.rightChild = rightChild
 
-    """ Call shape class to implement sizing of the window"""
-    def TestNode(self):
-        self.window.title("TestNode")
-        self.window.geometry('200x200')
-        newShape = Shapes(self.window)
-        newShape.circle()
-        self.window.mainloop()
+    def insertLeft(self, child):
+        if self.leftChild is None:
+            self.leftChild = child
+        else:
+            child.left = self.leftChild
+            self.leftChild = child
 
-root = Tk()
-TestNode = Node(root)
-TestNode.TestNode()
+    def insertRight(self,child):
+        if self.rightChild is None:
+            self.rightChild = child
+        else:
+            child.rightChild = self.rightChild
+            self.rightChild = child
+
+    
+
+root = TestNode()
+root.val = "a"
+print(root.leftChild, root.rightChild, root.val)
