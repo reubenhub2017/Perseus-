@@ -41,8 +41,9 @@ def start():
     #test.updateUsers()
     #test.runvisuals()
     newNode = Node(root)
-    test.newWindow(250,250,10,10,"test",newNode.node(250,250,0,0,"blue","black"))
-    test.newWindow(100,100,10,10,"test",Edge(root))
+    #test.newWindow(250,250,10,10,"test",newNode.node(250,250,0,0,"blue","black"))
+    #test.newWindow(100,100,10,10,"test",Edge(root))
+    test.newWindow(100,100,10,10,"Node With Edge", newNode.NodeAndEdge())
     test.newWindow()
     #test.messageBox()
 if __name__ == '__main__':

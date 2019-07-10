@@ -38,6 +38,9 @@ class Controller(Frame):
     def ZoomFunction(self, Frame):
         pass
 
+    def addTest(a, b)->int:
+        return a + b 
+
     def runvisuals(self):
         newroot = Tk()
 

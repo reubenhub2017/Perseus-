@@ -54,7 +54,18 @@ class Node(Shapes):
 
             """
 
-
+    def NodeAndEdge(self):
+        root = Tk()
+        #w = winfo_screenwidth
+        #h  = winfo_screenheight
+        newSpace = Canvas(root, height=400, width=400, background='white')
+        newSpace.pack()
+        #CurrentNode = parentNode
+        Node = newSpace.create_oval(100,100,250,240, fill='black')
+        #Node.grid(row=0, column=1)
+        leftEdge = newSpace.create_line(200,200,350,350,fill='black')
+        rightEdge = newSpace.create_line(150,200,0,350, fill='black')
+        root.mainloop()
 
 class TestNode:
     def __init__(self, Node=None, leftChild=None, rightChild=None):
