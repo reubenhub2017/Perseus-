@@ -2,6 +2,8 @@ import sys
 sys.path.insert(0,'./ext/imports/')
 from dependecies import *
 from shapes import *
+import math
+import random
 
 class Node(Shapes):
     def __init__(self,node):
@@ -65,6 +67,33 @@ class Node(Shapes):
         #Node.grid(row=0, column=1)
         leftEdge = newSpace.create_line(200,200,350,350,fill='black')
         rightEdge = newSpace.create_line(150,200,0,350, fill='black')
+        root.mainloop()
+
+    """Got it to work (idea wise)"""
+    """ New problem each node within the edge """
+    """Solved the problem each node withint the edge """
+    def threesixtyNodeAndEdge(self):
+        root = Tk()
+        newSpace = Canvas(root, height=400, width=400, background='white')
+        newSpace.pack()
+        colors = ['blue', 'black', 'red', 'yellow', 'green','grey', 'orange',
+                  'pink']
+
+        x1 = 225
+        y1 = 225
+
+        for i in range(0,400,100):
+            for j in range(0,400,100):
+                newNumber = random.randint(0,len(colors)-1)
+                newSpace.create_line(x1,y1,i+5,j+5,fill=colors[newNumber])
+                #newSpace.create_line(x1,y1,x2,y2,fill=colors[newNumber])
+                newSpace.create_oval(i-5,j+5,i+5,j+5,fill=colors[newNumber])
+                print((x1,y1),(i,j), colors[newNumber])
+        Node = newSpace.create_oval(200,200, 250,250, fill='black')
+        #newSpace.create_line(x1,y1,400,225)
+        #newSpace.create_line(x1,y1,225,0)
+        #newSpace.create_line(x1,y1,225,400)
+        #newSpace.create_line(x1,y1,0,225)
         root.mainloop()
 
 class TestNode:

@@ -29,7 +29,7 @@ def Data_analytics():
 """client authentication """
 def signin():
     pass
-def sigout():
+def signout():
     pass
 """ Data Management """
 #Hopefully to end where

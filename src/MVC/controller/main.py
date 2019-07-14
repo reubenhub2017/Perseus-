@@ -39,7 +39,7 @@ class Controller(Frame):
         pass
 
     def addTest(a, b)->int:
-        return a + b 
+        return a + b
 
     def runvisuals(self):
         newroot = Tk()
@@ -115,48 +115,48 @@ class Controller(Frame):
 
         # create a pulldown menu, and add it to the menu bar
         filemenu = Menu(menubar, tearoff=0)
-        filemenu.add_command(label="Open", command=self.open)
-        filemenu.add_command(label="Save", command=self.save)
+        filemenu.add_command(label="Open", command=open)
+        filemenu.add_command(label="Save", command=save)
         filemenu.add_separator()
-        filemenu.add_command(label="Exit", command=self.root.Exit)
+        #filemenu.add_command(label="Exit", command=Fram)
         menubar.add_cascade(label="File", menu=filemenu)
 
         # create more pulldown menus
         editmenu = Menu(menubar, tearoff=0)
-        editmenu.add_command(label="Cut", command=self.cut)
-        editmenu.add_command(label="Copy", command=self.paste)
-        editmenu.add_command(label="Paste", command=self.paste)
+        editmenu.add_command(label="Cut", command=cut)
+        editmenu.add_command(label="Copy", command=paste)
+        editmenu.add_command(label="Paste", command=paste)
         menubar.add_cascade(label="Edit", menu=editmenu)
 
         #Data pulldown
         datamenu = Menu(menubar, tearoff=0)
-        datamenu.add_command(label="Edit compression rate", command=self.Edit_compressionRate)
-        datamenu.add_command(label="Statistical view", command=self.Statistical_view)
-        datamenu.add_command(label="Formula input", command=self.Formula_input)
+        datamenu.add_command(label="Edit compression rate", command=Edit_compressionRate)
+        datamenu.add_command(label="Statistical view", command=Statistical_view)
+        datamenu.add_command(label="Formula input", command=Formula_input)
         menubar.add_cascade(label="Data analytics", menu=datamenu)
         #user Data pulldown
         profileMenu = Menu(menubar, tearoff=0)
-        profileMenu.add_command(label="Sign in", command=self.signin)
-        profileMenu.add_command(label="Sign out", command=self.signout)
-        profileMenu.add_command(label="Send Data", command=self.SendDataToCloud)
-        profileMenu.add_command(label="Retrieve partial Data", command=self.RetrieveDataFromCloud)
+        profileMenu.add_command(label="Sign in", command=signin)
+        profileMenu.add_command(label="Sign out", command=signout)
+        profileMenu.add_command(label="Send Data", command=SendDataToCloud)
+        profileMenu.add_command(label="Retrieve partial Data", command=RetrieveDataFromCloud)
         menubar.add_cascade(label="Account", menu=profileMenu)
 
         #Toggle File Tree
         viewmenu = Menu(menubar, tearoff=0)
-        viewmenu.add_command(label="Toggle File Tree", command=self.ToggleFileTree)
-        viewmenu.add_command(label="Toggle Compression Rate ",command=self.ToggleCompressionRate)
-        viewmenu.add_command(label="Toggle Search", command=self.ToggleSearch)
+        viewmenu.add_command(label="Toggle File Tree", command=ToggleFileTree)
+        viewmenu.add_command(label="Toggle Compression Rate ",command=ToggleCompressionRate)
+        viewmenu.add_command(label="Toggle Search", command=ToggleSearch)
         menubar.add_cascade(label="View", menu=viewmenu)
         #Viewpoints pulldown
         Windowmenu = Menu(menubar, tearoff=0)
-        Windowmenu.add_command(label= "Zooom in", command=self.ZoomIn)
-        Windowmenu.add_command(label="Zoom out", command=self.ZoomOut)
-        Windowmenu.add_command(label="Minimize", command=self.MinimizeWin)
+        Windowmenu.add_command(label= "Zooom in", command=ZoomIn)
+        Windowmenu.add_command(label="Zoom out", command=ZoomOut)
+        Windowmenu.add_command(label="Minimize", command=MinimizeWin)
         menubar.add_cascade(label="Window", menu=Windowmenu)
         #Info pulldown
         helpmenu = Menu(menubar, tearoff=0)
-        helpmenu.add_command(label="About", command=self.About)
+        helpmenu.add_command(label="About", command=About)
         menubar.add_cascade(label="Help", menu=helpmenu)
 
         # display the menu
