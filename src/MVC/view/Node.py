@@ -72,6 +72,9 @@ class Node(Shapes):
     """Got it to work (idea wise)"""
     """ New problem each node within the edge """
     """Solved the problem each node withint the edge """
+
+
+
     def threesixtyNodeAndEdge(self):
         root = Tk()
         newSpace = Canvas(root, height=400, width=400, background='white')
@@ -94,6 +97,9 @@ class Node(Shapes):
         #newSpace.create_line(x1,y1,225,0)
         #newSpace.create_line(x1,y1,225,400)
         #newSpace.create_line(x1,y1,0,225)
+        """We are going to try implementing a zoom in/out function within the window """
+
+
         root.mainloop()
 
 class TestNode:

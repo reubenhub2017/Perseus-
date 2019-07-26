@@ -8,6 +8,7 @@ Intelligent Software digital internet storage unit
 2. Official Website
 3. Blog
 
+
 ### Configuration Instruction
 ***
 
@@ -19,7 +20,7 @@ Intelligent Software digital internet storage unit
 
 ### File list or structure
 ***
-
+AI file based, with networking th
 
 ### Copyright and licensing information
 ***

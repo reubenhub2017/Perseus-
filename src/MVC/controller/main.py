@@ -4,10 +4,12 @@ from dependecies import *
 from shapes import *
 import time
 from windowfuncs import *
+from gui import *
 from tkinter import *
 from tkinter.ttk import *
 from PIL import ImageTk
 from PIL import Image
+from Node import Node
 import os
 
 class Controller(Frame):
@@ -42,9 +44,9 @@ class Controller(Frame):
         return a + b
 
     def runvisuals(self):
-        newroot = Tk()
+        newroot = tk.Tk()
 
-        newroot.title = "Perseus 1.0.0"
+        #newroot.title = "Perseus 1.0.0"
         # get screen width and height
         ws = newroot.winfo_screenwidth() # width of the screen
         hs = newroot.winfo_screenheight() # height of the screen
@@ -67,7 +69,17 @@ class Controller(Frame):
         sideFrame = Frame(newroot, style='My.TFrame',height=720,width=200, relief=SUNKEN)
         sideFrame.pack(side=LEFT)
 
+    """ A Few bugs that have to be worked ZoomOut
+    1. Zoom inside the main window
+    2. Node inside the left window.
+    3. Combining everything
+        """
+
         frame = Frame(newroot, style='My.TFrame' , height=720,width=1648, relief=SUNKEN)
+        #path = 'logo.png'
+        #Zoom_Advanced(frame.pack(side=RIGHT), path=path)
+        newNode = Node(frame)
+        newNode.threesixtyNodeAndEdge()
         frame.pack(side=RIGHT)
 
 
@@ -162,6 +174,10 @@ class Controller(Frame):
         # display the menu
         newroot.config(menu=menubar)
         frame.pack()
+        newroot.mainloop()
+
+
+
 
     """Make a new window for specific functions """
 
@@ -187,4 +203,15 @@ class Controller(Frame):
         label.pack(side="top", fill="both", expand=True, padx=20, pady=20)
         button = Button(root, text="OK", command=lambda: root.destroy())
         button.pack(side="bottom", fill="none", expand=True)
+        root.mainloop()
+
+
+    def clickableCanvas(self):
+        def callback(self,event):
+            print("clicked at, ", event.x, event.y)
+
+        root = Tk()
+        clickableFrame = Canvas(root,width=100, height=100, bg='black')
+        clickableFrame.bind("<Button-1>", callback)
+        clickableFrame.pack()
         root.mainloop()
