@@ -3,11 +3,8 @@ import sys
 sys.path.insert(0,'./ext/imports/')
 from dependecies import *
 from shapes import *
-<<<<<<< HEAD
-import pip 
-=======
+import pip
 
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa
 
 class filemanagmentTree:
 

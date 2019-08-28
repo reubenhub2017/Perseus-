@@ -144,11 +144,3 @@ class Zoom_Advanced(ttk.Frame):
                                                anchor='nw', image=imagetk)
             self.canvas.lower(imageid)  # set image into background
             self.canvas.imagetk = imagetk  # keep an extra reference to prevent garbage-collection
-<<<<<<< HEAD
-=======
-
-path = 'load.png'  # place path to your image here
-root = tk.Tk()
-app = Zoom_Advanced(root, path=path)
-root.mainloop()
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa

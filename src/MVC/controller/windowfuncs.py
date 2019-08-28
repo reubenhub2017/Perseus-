@@ -3,11 +3,10 @@ import sys
 #from model import *
 sys.path.insert(0,'./ext/imports/')
 from dependecies import *
-<<<<<<< HEAD
+
 from tkinter import *
 import time
-=======
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa
+
 
 """ Window view functions """
 def open():
@@ -24,7 +23,7 @@ def paste():
     pass
 """ Computation of Data"""
 def Edit_compressionRate():
-<<<<<<< HEAD
+
     EditCompressionWindow = Tk()
     EditCompressionWindow.title("Edit_compressionRate")
     Title = Label(EditCompressionWindow, text="Edit Comppression Algorithm")
@@ -40,9 +39,8 @@ def Edit_compressionRate():
     ApplyButton = Button(EditCompressionWindow, text= "Apply Changes")
     ApplyButton.pack()
     EditCompressionWindow.mainloop()
-=======
-    pass
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa
+
+
 def Statistical_view():
     pass
 def Formula_input():
@@ -51,7 +49,7 @@ def Data_analytics():
     pass
 """client authentication """
 def signin():
-<<<<<<< HEAD
+
     signinloop = Tk()
     signinloop.title("Sign In")
     UsernameLabel = Label(signinloop, text="Username")
@@ -81,17 +79,17 @@ def signout():
     label_compression.pack()
     label_btn.pack()
     confirmation.mainloop()
-=======
+
     pass
 def signout():
     pass
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa
+
 """ Data Management """
 #Hopefully to end where
 def SendDataToCloud():
     pass
 def RetrieveDataFromCloud():
-<<<<<<< HEAD
+
     RetrieveDataFromCloudWindow = Tk()
     RetrieveDataFromCloudWindow.title("Retrieving Data")
     RetrieveDataFromCloudLabel = Label(RetrieveDataFromCloudWindow, text="Retrieving data from Cloud")
@@ -109,9 +107,7 @@ def RetrieveDataFromCloud():
     progress_bar.start()
     #RetrieveDataFromCloudLabel.pack()
     RetrieveDataFromCloudWindow.mainloop()
-=======
-    pass
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa
+
 def ToggleFileTree():
     pass
 def ToggleCompressionRate():
@@ -133,7 +129,7 @@ def MaximumWin():
     pass
 def ErrorMessageWin():
     pass
-<<<<<<< HEAD
+
 def clickableCanvas(self):
         def callback(self,event):
             print("clicked at, ", event.x, event.y)
@@ -166,5 +162,3 @@ def messageBox(self):
         screen.title(title)
         screen.geometry('%dx%d+%d+%d' % (width, height, positionx, positiony))
         f(screen)
-=======
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa

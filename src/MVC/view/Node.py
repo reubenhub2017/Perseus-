@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #import sys
 #sys.path.insert(0,'./ext/imports/')
 #from dependecies import *
@@ -52,7 +52,7 @@ def threesixtyNodeAndEdge():
 
     newSpace.create_oval(200,200, 250,250, fill='white')
     newSpace.create_oval(300,300, 350,350, fill='white')
-=======
+
 import sys
 sys.path.insert(0,'./ext/imports/')
 from dependecies import *
@@ -182,4 +182,3 @@ class TestNode:
 root = TestNode()
 root.val = "a"
 print(root.leftChild, root.rightChild, root.val)
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa

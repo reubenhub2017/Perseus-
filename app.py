@@ -11,11 +11,10 @@ from customization import Template
 #import turtle
 import os
 import time
-<<<<<<< HEAD
-"""Start-up load screen  """
-=======
 
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa
+"""Start-up load screen  """
+
+
 def SplashScreen():
     root = Tk()
     root.title("Works")
@@ -30,7 +29,7 @@ def SplashScreen():
         time.sleep(0.05)
         progress_bar["value"] = i
         progress_bar.update()
-<<<<<<< HEAD
+
         progress_bar["value"] =  K0
     #root.overideredirect(True)
     progress_bar.start()
@@ -40,37 +39,21 @@ def SplashScreen():
 def start():
     root = Tk()
     test = Controller(parent=root)
-=======
-        progress_bar["value"] = 0
+
+    progress_bar["value"] = 0
     #root.overrideredirect(True)
     progress_bar.start()
     root.mainloop()
 
-
-
-
-
 def start():
     root = Tk()
     test = Controller(root)
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa
     test.run()
     test.analytics()
     test.updateUsers()
     test.runvisuals()
-    #newNode = Node(root)
-<<<<<<< HEAD
-    #test.newWindow(100,100,10,10  ,"Node With Edge", newNode.threesixtyNodeAndEdge())
 
-=======
-    #test.newWindow(250,250,10,10,"test",newNode.node(250,250,0,0,"blue","black"))
-    #test.newWindow(100,100,10,10,"test",Edge(root))
-    #test.newWindow(100,100,10,10,"Nsode With Edge", newNode.NodeAndEdge())
-    #test.newWindow(100,100,10,10,"Node With Edge", newNode.threesixtyNodeAndEdge())
-    #test.newWindow(100,100,10,10,"clickable Canvas",test.clickableCanvas())
-    #test.newWindow()
-    #test.messageBox()
->>>>>>> 3433180bc4a6ee25d05d761463e04e9c74a8edaa
+
 if __name__ == '__main__':
     #SplashScreen()
     start()
