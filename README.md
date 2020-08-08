@@ -10,17 +10,17 @@ Intelligent Software digital internet storage unit
 
 
 ### Configuration Instruction
+
 ***
 
 ### Operating Instructions
 ***
 * Linux Instructions
-* Windows Instructions
-* Android Instructions
+
 
 ### File list or structure
 ***
-AI file based, with networking th
+Main project consists of the app.py and main.py. 
 
 ### Copyright and licensing information
 ***
