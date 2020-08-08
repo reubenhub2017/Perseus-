@@ -2,7 +2,7 @@ import pymongo
 from random import randint
 
 client = pymongo.MongoClient(
-   "mongodb://reuben96:?Drogba96@cluster0-shard-00-00.7t9bv.mongodb.net:27017,cluster0-shard-00-01.7t9bv.mongodb.net:27017,cluster0-shard-00-02.7t9bv.mongodb.net:27017/perseus?ssl=true&replicaSet=atlas-am3yu0-shard-0&authSource=admin&retryWrites=true&w=majority")
+   )
 db =client.business
 #Step 2: Create sample data
 names = ['Kitchen','Animal','State', 'Tastey', 'Big','City','Fish', 'Pizza','Goat', 'Salty','Sandwich','Lazy', 'Fun']

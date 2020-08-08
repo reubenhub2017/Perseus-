@@ -4,10 +4,10 @@ from mysql.connector import Error
 """ Connection with MYSQL Database on Localhost """
 try:
     connection = mysql.connector.connect(host='localhost',
-                                         user='root',
-                                         password='?Drogba96',
+                                         user='',
+                                         password='',
 <<<<<<< HEAD
-                                         database='users')
+                                         database='')
 =======
                                          auth_plugin='mysql_native_password')
 >>>>>>> 73be496... Finish

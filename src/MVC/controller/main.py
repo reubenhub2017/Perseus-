@@ -331,9 +331,9 @@ def SaveLink(link_text,link, user_id):
 
     try:
         connection = mysql.connector.connect(host='localhost',
-                                             user='root',
-                                             password='?Drogba96',
-                                             database='Perseus',
+                                             user='',
+                                             password='',
+                                             database='',
                                              auth_plugin='mysql_native_password')
         if connection.is_connected():
             curA = connection.cursor(buffered=True)

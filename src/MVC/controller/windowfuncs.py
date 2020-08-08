@@ -64,8 +64,8 @@ def SubmitSignup(emailP,passwordP):
     try:
         connection = mysql.connector.connect(host='localhost',
                                              user='root',
-                                             password='?Drogba96',
-                                             database='Perseus',
+                                             password='',
+                                             database='',
                                              auth_plugin='mysql_native_password')
         if connection.is_connected():
             curA = connection.cursor(buffered=True)
