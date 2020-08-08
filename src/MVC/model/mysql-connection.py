@@ -6,7 +6,11 @@ try:
     connection = mysql.connector.connect(host='localhost',
                                          user='root',
                                          password='?Drogba96',
+<<<<<<< HEAD
                                          database='users')
+=======
+                                         auth_plugin='mysql_native_password')
+>>>>>>> 73be496... Finish
     if connection.is_connected():
         db_Info = connection.get_server_info()
         print("Connected to MySQL Server version ", db_Info)
@@ -30,8 +34,11 @@ try:
 
 except Exception as e:
     print("Error while connecting to MySQL", e)
+<<<<<<< HEAD
 finally:
     if (connection.is_connected()):
         cursor.close()
         connection.close()
         print("MySQL connection is closed")
+=======
+>>>>>>> 73be496... Finish

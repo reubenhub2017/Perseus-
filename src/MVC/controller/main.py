@@ -1,16 +1,24 @@
 import sys
 sys.path.insert(0,'./ext/imports/')
 from dependecies import *
+<<<<<<< HEAD
 
 #from shapes import *
 import time
 from windowfuncs import *
 #from gui import *
+=======
+import time
+from windowfuncs import *
+>>>>>>> 73be496... Finish
 from tkinter import *
 from tkinter.ttk import *
 from PIL import ImageTk
 from PIL import Image
+<<<<<<< HEAD
 #from Node import Node
+=======
+>>>>>>> 73be496... Finish
 import os
 import random
 
@@ -38,6 +46,7 @@ class Controller(Frame):
         print("Adding Folders")
         print("Adding to Perseus")
 
+<<<<<<< HEAD
 
     def runvisuals(self):
         self.winfo_toplevel().title("Perseus 1.1.0")
@@ -62,6 +71,74 @@ class Controller(Frame):
         yscrolbar.configure(command=newSpace.yview)
         xscrollbar.configure(command=newSpace.xview)
         """Making the Side window with File Tree """
+=======
+    def signup(self):
+        print("Runnning signin option ")
+        signinWindow = Tk()
+        signinFrame = Frame(siginWindow, height=200, width=200)
+
+        EmailLabel = Label(signinWindow, text="Email")
+        PasswordLabel = Label(signinWindow, text = "Password")
+
+        Email = Entry(siginFrame, width=10)
+        Password = Entry(siginFrame, width=10)
+        SubmitBtn = Button(siginFrame, width=10, text="Submit")
+
+        EmailLabel.grid(row=0,column=0)
+        PasswordLabel.grid(row=1,column=0)
+
+        Email.grid(row=0,column=1)
+        Passsword.grid(row=1,column=1)
+        SubmitBtn.grid(row=2, column=0)
+
+
+
+    def runvisuals(self):
+        #Have to make user_id set in the sessions
+
+        #GOOGLE APIS
+        try:
+            from googlesearch import search
+        except ImportError:
+                print("We could not find it at all!")
+        query = "Instagram"
+        for i in search(query, tld="co.in", num=10, stop=10, pause=2):
+            print(i)
+        self.winfo_toplevel().title("Perseus 1.1.0")
+        #self.parent.geometry('2000x900')
+        self.parent.configure(background="grey")
+        #sideFrame = Frame(self.parent,height=1500,width=100, relief=SUNKEN)
+        #sideFrame.grid(row=0,column=0, sticky='w')
+        newFrame = Frame(self.parent, height=1500,width=150, relief=SUNKEN)
+        newFrame.grid(row=0,column=1, sticky='ne',padx=(0,10))
+
+        e = Entry(newFrame, width=150);
+        e.grid(row=0,column=0,padx=(0,10))
+
+        def Search():
+            try:
+                from googlesearch import search
+            except ImportError:
+                    print("We could not find it at all!")
+            query = e.get()
+            r = 2
+            for i in search(e.get(), tld="co.in", num=10, stop=10, pause=2):
+                LabelResult = Label(newFrame, text=i)
+                LabelResult.grid(row=r, column=0, sticky='nw', padx=(0,10))
+                ButtonOptions = Button(newFrame, text="Save", command=lambda:SaveLink(e.get(),i, 1))
+                ButtonOptions.grid(row=r, column=2, sticky='nw', padx=(0,10))
+                r = r + 1
+
+
+        searchBtn = Button(newFrame,text="Search", command=Search)
+        searchBtn.grid(row=1,column=0, sticky='nw',padx=(0,10))
+
+        #newFrame.grid(row=2,column=0)
+        #yscrolbar.configure(command=newSpace.yview)
+        #xscrollbar.configure(command=newSpace.xview)
+
+        """ Making the Side window with File Tree
+>>>>>>> 73be496... Finish
         p = ttk.Panedwindow(sideFrame, orient=VERTICAL)
         # first pane, which would get widgets gridded into it:
         fp = ttk.Labelframe(p, text='File Management', width=200, height=720)
@@ -70,6 +147,7 @@ class Controller(Frame):
         #Tab view
         n = ttk.Notebook(fp)
         f1 = ttk.Frame(n, width=200, height=720)   # first page, which would get widgets gridded into it
+<<<<<<< HEAD
         f2 = ttk.Frame(n, width=200, height=720)
         # second page
         n.add(f1, text='Local Files')
@@ -96,6 +174,34 @@ class Controller(Frame):
         treeview=ttk.Treeview(f1)
         treeview.pack()
         """Treeview items"""
+=======
+
+        # second page
+        n.add(f1, text='Saved Files')
+
+        n.pack(fill="both", expand=1)
+        #Toolbar view
+        toolbar = Frame(newFrame, style='My.TFrame', height=720, width=25, relief=SUNKEN)
+        canvasToolbar = Canvas(toolbar, bg='blue',height=720, width=20)
+        toolbar.pack(side=RIGHT, fill=BOTH, expand=1)
+        toolbar.place(relx=1,rely=0,anchor=NE)"
+
+
+
+
+        #buttons on the toolbar
+        #options = ["Search", "Save", "Delete"]
+        #for i in options:
+        #    button = Button(toolbar, text=i)
+        #    button.pack(side=TOP, fill=BOTH, expand=1)"""
+
+        """#Label
+        ttk.Label(f1, text="Hierachical Treeview").pack()
+        #Treeview
+        treeview=ttk.Treeview(f1)
+        treeview.pack()
+        #Treeview items
+>>>>>>> 73be496... Finish
         treeview.insert('','0','item1',text='Parent tree')
         treeview.insert('','1','item2',text='1st Child')
         treeview.insert('','end','item3',text='2nd Child')
@@ -106,6 +212,7 @@ class Controller(Frame):
         treeview.insert('item3','end','E',text='E')
         treeview.insert('item3','end','F',text='F')
         treeview.move('item2','item1','end')
+<<<<<<< HEAD
         treeview.move('item3','item1','end')
         """Making the compression Rate Label """
         #compressionRateLabel = Label(frame, text="Compression Rate : ",   height=1, width=1648, bd=1, bg="grey")
@@ -116,6 +223,22 @@ class Controller(Frame):
         menubar = Menu(self.parent)
         """Making the file tree """
         localFileTree = Treeview(f1)
+=======
+        treeview.move('item3','item1','end')"""
+
+
+
+        """Making the compression Rate Label """
+
+        #ompressionRateLabel = Label(Shapes.frame, text="Compression Rate : ", width=1648, bd=1, bg="grey")
+        #compressionRateLabel.place(relx=0, rely= 1, anchor=S)
+        #TestShape = Shapes(newFrame)
+        #TestShape.circle(10,10,100,100,"red",)
+        """ Making the menu bar for the application"""
+        menubar = Menu(self.parent)
+        """Making the file tree """
+        #localFileTree = Treeview(f1)
+>>>>>>> 73be496... Finish
         """Making the compression Rate Label """
         #compressionRateLabel = Label(frame, text="Compression Rate : ",   height=1, width=1648, bd=1, bg="grey")
         #compressionRateLabel.place(relx=0, rely= 1, anchor=S)
@@ -129,7 +252,11 @@ class Controller(Frame):
         filemenu.add_command(label="Open", command=open)
         filemenu.add_command(label="Save", command=save)
         filemenu.add_separator()
+<<<<<<< HEAD
         filemenu.add_command(label="Exit", command=Fram)
+=======
+        filemenu.add_command(label="Exit", command=Frame)
+>>>>>>> 73be496... Finish
         menubar.add_cascade(label="File", menu=filemenu)
         """create more pulldown menus"""
         editmenu = Menu(menubar, tearoff=0)
@@ -137,6 +264,7 @@ class Controller(Frame):
         editmenu.add_command(label="Copy", command=paste)
         editmenu.add_command(label="Paste", command=paste)
         menubar.add_cascade(label="Edit", menu=editmenu)
+<<<<<<< HEAD
         """Data pulldown"""
         datamenu = Menu(menubar, tearoff=0)
         datamenu.add_command(label="Edit compression rate", command=Edit_compressionRate)
@@ -163,6 +291,18 @@ class Controller(Frame):
         Windowmenu.add_command(label="Zoom out", command=ZoomOut)
         Windowmenu.add_command(label="Minimize", command=MinimizeWin)
         menubar.add_cascade(label="Window", menu=Windowmenu)
+=======
+
+        """user Data pulldown"""
+        profileMenu = Menu(menubar, tearoff=0)
+        profileMenu.add_command(label="Sign up!", command=signup)
+        profileMenu.add_command(label="Sign in!", command=signin)
+        profileMenu.add_command(label="Sign out", command=signout)
+        #profileMenu.add_command(label="Retrieve Saved Links", command=RetrieveLinks)
+        menubar.add_cascade(label="Account", menu=profileMenu)
+
+
+>>>>>>> 73be496... Finish
         #Info pulldown
         helpmenu = Menu(menubar, tearoff=0)
         helpmenu.add_command(label="About", command=About)
@@ -170,6 +310,7 @@ class Controller(Frame):
 
         # display the menu
         self.parent.config(menu=menubar)
+<<<<<<< HEAD
         #frame.pack()
         self.parent.mainloop()
 
@@ -177,3 +318,31 @@ class Controller(Frame):
         self.parent.config(menu=menubar)
         frame.pack()
         newroot.mainloop()
+=======
+
+        self.parent.mainloop()
+
+        # display the menu
+        #self.parent.config(menu=menubar)
+
+
+
+def SaveLink(link_text,link, user_id):
+
+    try:
+        connection = mysql.connector.connect(host='localhost',
+                                             user='root',
+                                             password='?Drogba96',
+                                             database='Perseus',
+                                             auth_plugin='mysql_native_password')
+        if connection.is_connected():
+            curA = connection.cursor(buffered=True)
+            id = curA.lastrowid
+            insert = 'INSERT INTO links (id, link_text, link, user_id_corresponding_to_link) VALUES (%s, %s, %s, %s)'
+            curA.execute(insert, (float(id), link_text, link, user_id))
+            connection.commit()
+            curA.close()
+            print("Successful Saved Link on MYSQL")
+    except Exception as e:
+        print("Error while connecting to MySQL", e)
+>>>>>>> 73be496... Finish

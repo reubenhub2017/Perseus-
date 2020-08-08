@@ -5,13 +5,19 @@ from tkinter import *
 from PIL import ImageTk
 from PIL import Image
 from main import Controller
+<<<<<<< HEAD
 from shapes import Shapes
 from Node import Node
 from customization import Template
+=======
+
+
+>>>>>>> 73be496... Finish
 #import turtle
 import os
 import time
 
+<<<<<<< HEAD
 """Start-up load screen  """
 
 
@@ -44,6 +50,10 @@ def start():
     #root.overrideredirect(True)
     progress_bar.start()
     root.mainloop()
+=======
+"""Starting the Application """
+
+>>>>>>> 73be496... Finish
 
 def start():
     root = Tk()
